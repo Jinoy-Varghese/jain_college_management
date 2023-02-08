@@ -1,0 +1,116 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+ #wrapper {
+    overflow-x: hidden;
+ }
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -13rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 13rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+/* braedcrump*/
+.breadcrumb-item
+{
+  display:inline;
+}
+.breadcrumb::-webkit-scrollbar
+{
+  display: none !important;
+}
+.breadcrumb
+{
+display:block !important;
+overflow:scroll;
+white-space:nowrap;
+}
+/* /braedcrump*/
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+
+  #menu-toggle
+  {
+    display:none;
+  }
+}
+
+.sub-menu
+{
+  cursor:pointer;
+}
+.fa-angle-down,.fa-angle-up
+{
+float:right;
+margin-top:7px;
+}
+.drop-down-n
+{
+  float:left;
+  text-decoration: none !important;
+  color:#495057;
+}
+.drop-down-ul
+{
+  list-style: none;
+  background-color: #DAE0E5;
+
+}
+.drop-down-n:hover
+{
+  color:#495057;
+}
+.list-group-item:hover
+{
+  background-color: #dae0e5!important;
+}
+.drop-down-a
+{
+  text-decoration: none !important;
+  color: #495057;
+}
+.drop-down-li
+{
+padding: 6px;
+margin-left: -40px;
+padding-left: 30px;
+}
+.drop-down-li:hover
+{
+  background-color:white;
+  border-left: 3px solid #007BFF;
+}
