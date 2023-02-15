@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="description"
         content="Mar Thoma College of Science & Technology is owned and managed by a Registered Society namely The Mar Thoma Educational, Technical, Training and Research Centre (Mar Thoma ETTARC), under the Trivandrum-Quilon Diocese of the Mar Thoma Church. This college is affiliated to the University of Kerala and has 7 undergraduate and 5 post graduate courses.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/png" href="<?php echo base_url('assets/image/marthoma.png'); ?>" />
+    <link rel="shortcut icon" type="image/png" href="<?php echo base_url('assets/image/jain_fav.png'); ?>" />
     <script async src="https://cdn.ampproject.org/v0.js"></script>
 
     <script type="application/ld+json">
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
 
     nav {
-        background-color: #6789A9;
+        background-color: #28338b;
 
     }
 
@@ -91,6 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     .inspire_bg {
         background: url("<?php echo base_url('assets/img/principal.jpg') ?>");
         background-repeat: no-repeat;
+        background-size: cover;
     }
 
     ::-webkit-scrollbar {
@@ -198,9 +199,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <nav className="navbar navbar-expand-lg navbar-light sticky-top">
         <div className="row p-0 m-0 col-md-2 col-8" href="#">
         <div className="col-3 ">
-            <img src="<?php echo base_url('assets/image/logo_crop.png');?>" className="pt-0 m-0" style={{width:"36px",height:"37px"}} />
+            <img src="<?php echo base_url('assets/image/jain_logo.png');?>" className="pt-0 m-0" style={{width:"auto",height:"44px"}} />
         </div>
-            <div className="text-white h4 pt-1 pl-1 col-6 custom-font"> MTCST</div>
         </div>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -213,7 +213,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <a className="nav-link text-white custom-font" href="#">Home <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link text-white custom-font" href="<?php echo base_url('assets/mtcst_app.apk'); ?>" download>Download <i class="fab fa-android"></i></a>
+                    <a className="nav-link text-white custom-font" href="<?php echo base_url('assets/jain_app.apk'); ?>" download>Download <i class="fab fa-android"></i></a>
                 </li>
                 <li className="nav-item mr-3">
                     <a className="nav-link text-white custom-font" href="<?php echo base_url('Home/login'); ?>">Login</a>
@@ -229,14 +229,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     <div className=" col-12 p-0 m-0 view ">
-    <amp-img height="85" width="200" className="col-12 p-0 m-0" id="lap_mtcst" src="<?php echo base_url('assets/image/mtcst_cloud.jpeg') ?>"
+    <amp-img height="85" width="200" className="col-12 p-0 m-0" id="lap_mtcst" src="<?php echo base_url('assets/image/ju_landing.jpg') ?>"
             alt="marthoma college of science and technology ayur" layout="responsive"></amp-img>
-        <amp-img height="155" width="100" className="col-12 p-0 m-0" id="mobile_mtcst"
-            src="<?php echo base_url('assets/image/mtcst_cloud_mobile.jpeg') ?>"
+        <amp-img height="155" width="120" className="col-12 p-0 m-0" id="mobile_mtcst"
+            src="<?php echo base_url('assets/image/ju_mobile_landing.jpg') ?>"
             alt="marthoma college of science and technology ayur" layout="responsive"></amp-img>
             <div className="card-img-overlay card-inverse">
             <h1 className="typewrite-h1">
-                <a  className="typewrite text-white d-flex justify-content-center align-items-center" data-period="2000" data-type='[ "Mar Thoma College of Science and Technology","The Best College for Good Education" ]'>
+                <a  className="typewrite text-white d-flex justify-content-center align-items-center" data-period="2000" data-type='[ "Jain (Deemed-to-be University)","The Best College for Good Education" ]'>
                     <span className="wrap"></span>
                 </a>
             </h1>  
@@ -308,15 +308,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         Your browser does not support HTML5 video.
         </video>
 
+        
+
 
         <div className="row col-12 mt-5 pt-5 ml-0 pb-5"> 
-            <div class="col-md-4 col-12 p-3 mb-2 mb-md-5" style={{height:"290px"}}><div className="col-12 inspire_bg h-100"></div></div>
+            <div class="col-md-4 col-12 p-3 mb-2 mb-md-5" style={{height:"300px"}}><div className="col-12 inspire_bg h-100"></div></div>
             <div class="col-md-8 col-12" style={{height:"290px"}}>
-            <div className="col-12 h2 pb-3 mt-4 mt-md-5 font-weight-bold text-primary pl-0">#Principal</div>  
+            <div className="col-12 h2 pb-3 mt-4 mt-md-5 font-weight-bold text-primary pl-0">#Chairman</div>  
             <div className="col-md-10 pl-2 col-12 ">
-            Prof. Dr. Joseph Mathai.<br/>
-            Mobile Number : 9387255515.<br/>
-            email : josamkar@gmail.com.<br/>
+            Chancellor, JAIN (Deemed-to-be University)
+            <br />  
+            Founder – Chairman
+            <br />  
+            JAIN Group
             </div>
         </div>
         </div>
@@ -533,16 +537,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        
     <div className="row col-12 mt-5 pt-5 ml-0" style={{background:"#182B45"}}>
         <div class="col-12 col-md-4 mt-md-0 mt-5">
-            <div className="text-light h2 col-12">Mar Thoma</div>
-            <div className="text-light col-12 h5">College of Science & Technology</div>
+            <div className="text-light h2 col-12">JAIN</div>
+            <div className="text-light col-12 h5">(Deemed-to-be University)</div>
             <div class="text-light col-12">
-                Ayur P.O Chadayamangalam <br />
-                Kollam, Kerala, 691534
+                Jayanagar 9th Block <br />
+                Bangalore, Karnataka, 560078
             </div>
             <div class="text-light col-12 mt-4">
             <i class="fas fa-phone-alt">&nbsp;&nbsp; 0474-2475444</i>
             <br />
-            <i class="fas fa-envelope">&nbsp;&nbsp;support@mtcst.ml</i>
+            <i class="fas fa-envelope">&nbsp;&nbsp;support@jainuniversity.ac.in</i>
             </div>
         </div>
         <div class="col-12 col-md-4 mt-md-0 mt-5">

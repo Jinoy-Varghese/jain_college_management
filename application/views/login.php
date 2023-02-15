@@ -112,7 +112,9 @@ body {
     text-align: center;
     width: 180px;
 }
-
+body {
+    overflow: hidden;
+}
 </style>
 
 <?php 
@@ -155,9 +157,9 @@ if($this->session->flashdata('unregistered_email')){
 ?>
 
 <div class="col-12 mt-1 ml-1"><a href="<?php echo base_url('Home/'); ?>"><i class="fas fa-arrow-left"></i></a></div>
-<?php echo form_open('Home/login_process','class="form-signin text-center"'); ?>
-<div class="mt-4">
-      <img class="mb-4" src="<?php echo base_url('assets/image/marthoma.png'); ?>" alt="" width="90" height="94" />
+<?php echo form_open('Home/login_process','class="pt-0 form-signin text-center"'); ?>
+<div class="mt-0 p-0">
+      <img class="mb-0 mt-0 pt-0" src="<?php echo base_url('assets/image/jain_logo_black.png'); ?>" alt="" width="280" height="210" />
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputEmail" class="sr-only">Email address</label>
       <input type="email" name="u_name" class="form-control" placeholder="Email address" required autofocus>
@@ -183,7 +185,7 @@ $client->setClientId('548591138639-57fcqfdrl1ur5cc55bmnv8u1ade3elha.apps.googleu
 // Enter your Client Secrect
 $client->setClientSecret('irWOesu4JmwEV8PoXDDPu0Ae');
 // Enter the Redirect URL
-$client->setRedirectUri('http://localhost/major/Home/google_auth');
+$client->setRedirectUri('http://localhost/jain_college_management/Home/google_auth');
 
 // Adding those scopes which we want to get (email & profile Information)
 $client->addScope("email");

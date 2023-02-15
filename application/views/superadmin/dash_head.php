@@ -56,7 +56,7 @@ if(!isset($_SESSION['u_id']) OR $_SESSION['role']!="Super Admin")
   <!--navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top mt-0 mb-0 pb-0 pt-0"><!-- sticky top can be replaced with fixed-botto or fixed-top -->
     <button class="btn btn-primary" id="menu-toggle">Menu</button>
-    <a href="#" class="navbar-brand mx-auto mt-0 mb-0 pb-0 pt-0"><div class='rounded-circle ml-md-2'><img src="<?php echo base_url('assets/image/logo1.png');?>"class="ml-n1 mt-n1" style='width:60px; height:60px;'></div></a>
+    <a href="#" class="navbar-brand mx-auto mt-0 mb-0 pb-0 pt-0"><div class='rounded-circle ml-md-2'><img src="<?php echo base_url('assets/image/jain_logo.png');?>"class="ml-n1 mt-n1 p-1" style='width:155px; height:60px;'></div></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
