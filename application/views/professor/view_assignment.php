@@ -14,6 +14,10 @@ if($this->session->flashdata('add_assign')){
      </button>
    </div>';
    }
+   if(isset($_SESSION['add_assign'])){
+    unset($_SESSION['insert_failed']);
+}
+
 ?>
 
 

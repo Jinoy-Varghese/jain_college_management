@@ -31,6 +31,12 @@ if($this->session->flashdata('insert_failed')){
      </button>
    </div>';
    }
+   if(isset($_SESSION['insert_failed'])){
+    unset($_SESSION['insert_failed']);
+}
+if(isset($_SESSION['insert_note_success'])){
+    unset($_SESSION['insert_note_success']);
+}
 ?>
     <div class="row">
         <div class="col-md-3"></div>

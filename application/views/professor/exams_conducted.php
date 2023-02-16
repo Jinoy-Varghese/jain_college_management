@@ -14,6 +14,9 @@ if($this->session->flashdata('insert_success')){
    </div>';
    }
 
+if(isset($_SESSION['insert_success'])){
+    unset($_SESSION['insert_success']);
+}
 ?>
 <style>
 

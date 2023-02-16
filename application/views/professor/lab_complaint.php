@@ -34,6 +34,12 @@ if($this->session->flashdata('registration_failed')){
      </button>
    </div>';
    }
+   if(isset($_SESSION['registered_success'])){
+    unset($_SESSION['registered_success']);
+}
+if(isset($_SESSION['registration_failed'])){
+    unset($_SESSION['registration_failed']);
+}
 ?>
     <nav aria-label="breadcrumb mt-sm-5">
         <ol class="breadcrumb">

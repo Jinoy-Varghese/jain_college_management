@@ -15,6 +15,9 @@ if($this->session->flashdata('add_topic')){
      </button>
    </div>';
    }
+   if(isset($_SESSION['add_topic'])){
+    unset($_SESSION['add_topic']);
+}
 ?>
 
 <link href="<?php echo base_url('assets/bootstrap-table/bootstrap-table.min.css'); ?>" rel="stylesheet">

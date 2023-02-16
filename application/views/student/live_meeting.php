@@ -88,7 +88,7 @@ if($this->session->flashdata('meeting_over')){
 		<tr>
 			<td><?php echo $i ?></td>
 			<td><?php echo $user_data->subject ?></td>
-      <td><a href="<?php echo 'https://mtcst.herokuapp.com/'.md5($user_data->subject).md5($user_data->sem); ?>" class="btn border-primary col-12 custom-button">Join</a></td>
+      <td><a href="<?php echo 'https://nextjs-zegocloud-uikits-git-main-jinoy-varghese.vercel.app/?roomID='.md5($user_data->subject).md5($user_data->sem); ?>" class="btn border-primary col-12 custom-button">Join</a></td>
 	  	</tr>
 	<?php		
   $i++;

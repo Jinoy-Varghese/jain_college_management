@@ -8,7 +8,9 @@ if($this->session->flashdata('meeting_over')){
   </button>
 </div>';
 }
- 
+if(isset($_SESSION['meeting_over'])){
+    unset($_SESSION['meeting_over']);
+}
  
 ?>
  <div class="row">
