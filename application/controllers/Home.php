@@ -120,6 +120,10 @@ class Home extends CI_Controller
               {
               redirect('Office','refresh');
               }
+              elseif($users->role=="placement_cell")
+              {
+              redirect('placement_cell','refresh');
+              }
             }
             else
             {
