@@ -52,20 +52,20 @@ class Placement_cell extends CI_Controller
     $this->load->view("placement_cell/dash_footer.php");
     $this->load->view("footer.php");
   }
-  public function complaints()
+  public function view_offers()
   {
     $this->load->view("header.php");
     $this->load->view("placement_cell/dash_head.php");
-    $this->load->view("placement_cell/complaints.php");
+    $this->load->view("placement_cell/view_offers.php");
     $this->load->view("placement_cell/dash_footer.php");
     $this->load->view("footer.php");
   }
-  public function update_complaint_data($complaint_id)
+  public function delete_offer($job_id)
   {
-    $updated_complaint=array('fixed_on'=>date('d-m-Y'),'status'=>0);
-    $this->Lab_assistant_model->update_complaint_data($updated_complaint,$complaint_id);
+    $this->db->where('job_id', $job_id);
+    $this->db->delete('offers');
     $this->session->set_flashdata('update_success',"Successfully Updated");
-    redirect('Lab_assistant/complaints','refresh'); 
+    redirect('Placement_cell/view_Offers','refresh'); 
   }
   public function create_offer_process()
   {

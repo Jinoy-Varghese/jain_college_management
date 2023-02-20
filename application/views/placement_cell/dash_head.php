@@ -194,7 +194,8 @@ if(!isset($_SESSION['u_id']) OR $_SESSION['role']!="placement_cell")
       <div class="list-group list-group-flush">
         <a href="<?php echo site_url(); ?>Placement_cell/" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="<?php echo site_url(); ?>Placement_cell/create_Offer" class="list-group-item list-group-item-action bg-light">Create Offer</a>
-  
+        <a href="<?php echo site_url(); ?>Placement_cell/view_offers" class="list-group-item list-group-item-action bg-light">View Offers</a>
+
       </div>
     </div>
 
