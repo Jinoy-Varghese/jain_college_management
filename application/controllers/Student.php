@@ -131,6 +131,22 @@ public function pgResponse()
   $this->load->view("student/pay/lib/encdec_paytm.php");
   $this->load->view("student/pay/pgResponse.php");
 }
+public function apply_for_job()
+{
+  $this->load->view("header.php");
+  $this->load->view("student/dash_head.php");
+  $this->load->view("amp.php");
+  $this->load->view("student/apply_for_job.php");
+  $this->load->view("student/dash_footer.php");
+  $this->load->view("footer.php");
+}
+public function apply_offer_process($job_id)
+{
+  $offer_data=array('job_id'=>$job_id,'student_id'=>$_SESSION['u_id']);
+  $this->db->insert('offer_application',$offer_data);
+  $this->session->set_flashdata('insert_success',"Successfully Updated");
+  redirect('Student/apply_for_job','refresh'); 
+}
 
 public function upload_assignment($as_id)
 {

@@ -119,6 +119,8 @@ if(!isset($_SESSION['u_id']) OR $_SESSION['role']!="student")
         <a href="<?php echo site_url(); ?>Student/internal_mark" class="list-group-item list-group-item-action bg-light">Internal Mark</a> 
         <a href="<?php echo site_url(); ?>Student/fee_payment" class="list-group-item list-group-item-action bg-light">Fee Payment</a>
         <a href="<?php echo site_url(); ?>Student/live_meeting" class="list-group-item list-group-item-action bg-light">Live Meeting <i class="fas fa-video float-right mt-1"></i></a>
+        <a href="<?php echo site_url(); ?>Student/apply_for_job" class="list-group-item list-group-item-action bg-light">Apply for Job </a>
+
       
         
         
