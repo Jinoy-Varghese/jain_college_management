@@ -52,11 +52,27 @@ class Placement_cell extends CI_Controller
     $this->load->view("placement_cell/dash_footer.php");
     $this->load->view("footer.php");
   }
+  public function view_applications()
+  {
+    $this->load->view("header.php");
+    $this->load->view("placement_cell/dash_head.php");
+    $this->load->view("placement_cell/view_applications.php");
+    $this->load->view("placement_cell/dash_footer.php");
+    $this->load->view("footer.php");
+  }
   public function view_offers()
   {
     $this->load->view("header.php");
     $this->load->view("placement_cell/dash_head.php");
     $this->load->view("placement_cell/view_offers.php");
+    $this->load->view("placement_cell/dash_footer.php");
+    $this->load->view("footer.php");
+  }
+  public function applicants_page($job_id)
+  {
+    $this->load->view("header.php");
+    $this->load->view("placement_cell/dash_head.php");
+    $this->load->view("placement_cell/applicants_page.php",$job_id);
     $this->load->view("placement_cell/dash_footer.php");
     $this->load->view("footer.php");
   }
@@ -67,6 +83,19 @@ class Placement_cell extends CI_Controller
     $this->session->set_flashdata('update_success',"Successfully Updated");
     redirect('Placement_cell/view_Offers','refresh'); 
   }
+  public function application_status()
+  {
+    $status=$_REQUEST['status'];
+    $application_id=$_REQUEST['application_id'];
+    $job_id=$_REQUEST['job_id'];
+    $link="Placement_cell/applicants_page/".$job_id;
+    $offer_array=array('status'=>$status);
+    $this->db->where('application_id', $application_id);
+    $this->db->update('offer_application',$offer_array);
+    $this->session->set_flashdata('update_success',"Successfully Updated");
+    redirect($link,'refresh'); 
+  }
+
   public function create_offer_process()
   {
     if($this->input->post('create_offer_btn'))

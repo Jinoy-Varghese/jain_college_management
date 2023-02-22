@@ -90,22 +90,23 @@ if(!isset($_SESSION['u_id']) OR $_SESSION['role']!="student")
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">
       <?php
-    $this->db->from('users');
-    $this->db->select('*');
-     $this->db->where('email',$_SESSION['u_id']);
-     $sql=$this->db->get();
-     foreach($sql->result() as $user_data)
-     {
-       $image=$user_data->u_image;
-       if($image==null)
-       {
-        echo "<img src='".base_url('assets/img/no-profile.jpg')."' class='img-fluid img-thumbnail rounded-circle ml-md-2 ml-2' style='width:150px; height:150px;'>";
-       }
-       else
-       {
-        echo "<img src='".base_url($image)."' class='img-fluid img-thumbnail rounded-circle ml-md-2 ml-2' style='width:150px;'>";
-       }     }
-     ?>
+      $this->db->from('users');
+      $this->db->select('*');
+      $this->db->join('student_data','student_data.email=users.email');
+      $this->db->where('student_data.email',$_SESSION['u_id']);
+      $sql=$this->db->get();
+      foreach($sql->result() as $user_data)
+      {
+        $image=$user_data->u_image;
+        if($image==null)
+        {
+          echo "<img src='".base_url('assets/img/no-profile.jpg')."' class='img-fluid img-thumbnail rounded-circle ml-md-2 ml-2' style='width:150px; height:150px;'>";
+        }
+        else
+        {
+          echo "<img src='".base_url($image)."' class='img-fluid img-thumbnail rounded-circle ml-md-2 ml-2' style='width:150px;'>";
+        }     }
+      ?>
     
       <div class="text-center font-weight-bold"><?php echo $user_name->name; ?></div>
       </div>
@@ -119,10 +120,13 @@ if(!isset($_SESSION['u_id']) OR $_SESSION['role']!="student")
         <a href="<?php echo site_url(); ?>Student/internal_mark" class="list-group-item list-group-item-action bg-light">Internal Mark</a> 
         <a href="<?php echo site_url(); ?>Student/fee_payment" class="list-group-item list-group-item-action bg-light">Fee Payment</a>
         <a href="<?php echo site_url(); ?>Student/live_meeting" class="list-group-item list-group-item-action bg-light">Live Meeting <i class="fas fa-video float-right mt-1"></i></a>
+        <?php if($user_data->s_sem=="s3" || $user_data->s_sem=="s4" || $user_data->s_sem=="s5" || $user_data->s_sem=="s6")
+        { 
+        ?>
         <a href="<?php echo site_url(); ?>Student/apply_for_job" class="list-group-item list-group-item-action bg-light">Apply for Job </a>
-
-      
-        
+        <?php 
+        }
+        ?>
         
       </div>
     </div>

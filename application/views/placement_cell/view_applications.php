@@ -45,7 +45,7 @@ if(isset($_SESSION['update_success'])){
     <nav aria-label="breadcrumb mt-sm-5">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">View Offers</li>
+            <li class="breadcrumb-item active" aria-current="page">View Applications</li>
         </ol>
     </nav>
 
@@ -59,25 +59,25 @@ if(isset($_SESSION['update_success'])){
     <table class="text-center" id="table" data-toolbar="#toolbar" data-show-export="true" data-search="true" data-sortable="true"
                         data-show-columns="true" data-toggle="table" data-pagination="true" class="table"
                         data-visible-search="true">
-                        <thead class="table-primary">
+        <thead class="table-primary">
 
-                            <tr>
-                                <th data-field="state" data-checkbox="true"></th>
-                                <th data-field="Job id" data-sortable="true">Job Id</th>
-                                <th data-field="Logo" data-sortable="true">Logo</th>
-                                <th data-field="Company name" data-sortable="true">Company Name</th>
-                                <th data-field="job post" data-sortable="true" data-visible="false">Job Post</th>
-                                <th data-field="job location" data-sortable="true" data-visible="false">Job Location</th>
-                                <th data-field="salary" data-sortable="true" data-visible="false">Job Salary</th>
-                                <th data-field="description" data-sortable="true" data-visible="false">Job Description</th>
-                                <th data-field="eligibility" data-sortable="true" data-visible="false">Job Eligibility</th>
-                                <th data-field="about" data-sortable="true" data-visible="false">About Company</th>
-                                <th data-field="date" data-sortable="true" data-visible="false">Last Date</th>
-                                <th data-field="edit">Action</th>
-                            </tr>
+            <tr>
+                <th data-field="state" data-checkbox="true"></th>
+                <th data-field="Job id" data-sortable="true">Job Id</th>
+                <th data-field="Logo" data-sortable="true">Logo</th>
+                <th data-field="Company name" data-sortable="true">Company Name</th>
+                <th data-field="job post" data-sortable="true" data-visible="false">Job Post</th>
+                <th data-field="job location" data-sortable="true" data-visible="false">Job Location</th>
+                <th data-field="salary" data-sortable="true" data-visible="false">Job Salary</th>
+                <th data-field="description" data-sortable="true" data-visible="false">Job Description</th>
+                <th data-field="eligibility" data-sortable="true" data-visible="false">Job Eligibility</th>
+                <th data-field="about" data-sortable="true" data-visible="false">About Company</th>
+                <th data-field="date" data-sortable="true" data-visible="false">Last Date</th>
+                <th data-field="edit">Action</th>
+            </tr>
 
-                        </thead>
-                        <tbody>
+        </thead>
+        <tbody>
     	<?php 
       $this->db->select('*');
       $this->db->from('offers');
@@ -100,7 +100,7 @@ if(isset($_SESSION['update_success'])){
 	    	<td>
         <?php
 
-          echo "<button type='button' class='btn btn-danger' data-toggle='modal' data-target='#myModal$offer_data->job_id'>Delete</button>";
+          echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal$offer_data->job_id'>View Applications</button>";
 
         ?>
         </td>
@@ -129,7 +129,7 @@ if(isset($_SESSION['update_success'])){
 
             <div class="modal-footer">
               <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
-              <a href="<?php echo base_url()?>Placement_cell/delete_offer/<?php echo $offer_data->job_id;?>"><input type="submit" name="complaint_btn" class="btn btn-danger" value="Delete Offer"></a>
+              <a href="<?php echo base_url()?>Placement_cell/applicants_page/<?php echo $offer_data->job_id;?>"><input type="submit" name="complaint_btn" class="btn btn-primary" value="View Applications"></a>
             </div>
 				</div>
 			</div>

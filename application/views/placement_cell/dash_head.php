@@ -109,40 +109,12 @@ if(!isset($_SESSION['u_id']) OR $_SESSION['role']!="placement_cell")
         <li class="nav-item active"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a></li>
         <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <i class="fas fa-bell 
-             
-             <?php
-                $sql=$this->db->select('status')->from('lab_complaints')->get();
-                foreach($sql->result() as $value)
-                {
-                  $status=$value->status;
-                }
-                if($status==1)
-                {
-             ?>
-             text-warning alert-bell
-             <?php 
-                }
-              ?>
-             
-             "></i>
+             <i class="fas fa-bell"></i>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="border-top-color: coral;">
             <span class="dropdown-menu-arrow "></span>
-            <?php
-              if($status==1)
-              {
-            ?>
-              <a class="dropdown-item" href="#">New Complaint Is Registered</a>
-              <?php 
-              }
-              else
-              {
-              ?>
+            
                <a class="dropdown-item" href="#">No Notifications</a>
-              <?php
-              }
-               ?>
             </div>
           </li>
         <li class="nav-item dropdown mr-4">
@@ -195,6 +167,8 @@ if(!isset($_SESSION['u_id']) OR $_SESSION['role']!="placement_cell")
         <a href="<?php echo site_url(); ?>Placement_cell/" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="<?php echo site_url(); ?>Placement_cell/create_Offer" class="list-group-item list-group-item-action bg-light">Create Offer</a>
         <a href="<?php echo site_url(); ?>Placement_cell/view_offers" class="list-group-item list-group-item-action bg-light">View Offers</a>
+        <a href="<?php echo site_url(); ?>Placement_cell/view_applications" class="list-group-item list-group-item-action bg-light">View Applications</a>
+
 
       </div>
     </div>

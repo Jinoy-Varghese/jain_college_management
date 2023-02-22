@@ -20,7 +20,7 @@ if(!isset($_SESSION['u_id']))
 if($this->session->flashdata('update_success')){
  echo '
 <div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>Success!</strong> Successfully Deleted.
+  <strong>Success!</strong> Successfully Updated.
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -45,7 +45,8 @@ if(isset($_SESSION['update_success'])){
     <nav aria-label="breadcrumb mt-sm-5">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">View Offers</li>
+            <li class="breadcrumb-item"><a href="#">View Applicants</a></li>
+            <li class="breadcrumb-item active" aria-current="page">View Applications</li>
         </ol>
     </nav>
 
@@ -59,50 +60,54 @@ if(isset($_SESSION['update_success'])){
     <table class="text-center" id="table" data-toolbar="#toolbar" data-show-export="true" data-search="true" data-sortable="true"
                         data-show-columns="true" data-toggle="table" data-pagination="true" class="table"
                         data-visible-search="true">
-                        <thead class="table-primary">
+        <thead class="table-primary">
 
-                            <tr>
-                                <th data-field="state" data-checkbox="true"></th>
-                                <th data-field="Job id" data-sortable="true">Job Id</th>
-                                <th data-field="Logo" data-sortable="true">Logo</th>
-                                <th data-field="Company name" data-sortable="true">Company Name</th>
-                                <th data-field="job post" data-sortable="true" data-visible="false">Job Post</th>
-                                <th data-field="job location" data-sortable="true" data-visible="false">Job Location</th>
-                                <th data-field="salary" data-sortable="true" data-visible="false">Job Salary</th>
-                                <th data-field="description" data-sortable="true" data-visible="false">Job Description</th>
-                                <th data-field="eligibility" data-sortable="true" data-visible="false">Job Eligibility</th>
-                                <th data-field="about" data-sortable="true" data-visible="false">About Company</th>
-                                <th data-field="date" data-sortable="true" data-visible="false">Last Date</th>
-                                <th data-field="edit">Action</th>
-                            </tr>
+            <tr>
+                <th data-field="state" data-checkbox="true"></th>
+                <th data-field="Application No." data-sortable="true">Application No.</th>
+                <th data-field="Name" data-sortable="true">Name</th>
+                <th data-field="Email" data-sortable="true">Email</th>
+                <th data-field="Phone No." data-sortable="true" data-visible="false">Phone No.</th>
+                <th data-field="Gender" data-sortable="true" data-visible="false">Gender</th>
+                <th data-field="Department" data-sortable="true" data-visible="false">Department</th>
+                <th data-field="Semester" data-sortable="true" data-visible="false">Semester</th>
+                <th data-field="Course" data-sortable="true" data-visible="false">Course</th>
+                <th data-field="SSLC" data-sortable="true" data-visible="false">SSLC</th>
+                <th data-field="Plus Two" data-sortable="true" data-visible="false">Plus Two</th>
+                <th data-field="edit">Action</th>
+            </tr>
 
-                        </thead>
-                        <tbody>
+        </thead>
+        <tbody>
     	<?php 
       $this->db->select('*');
-      $this->db->from('offers');
+      $this->db->from('offer_application');
+      $this->db->join('student_data','student_data.email=offer_application.student_id');
+      $this->db->join('offers',"offer_application.job_id=offers.job_id");
+      $this->db->join('users','users.email=student_data.email');
+      $this->db->where('status','0');
       $sql=$this->db->get();
 	    foreach($sql->result() as $offer_data)
 	    {
     	?>
     	<tr>
-        <td class="bs-checkbox"><input data-index="<?php echo $offer_data->complaint_id; ?>" name="btSelectItem" type="checkbox"></td>
-        <td><?php echo $offer_data->job_id; ?></td>
-	    	<td><img src="<?php echo base_url($offer_data->c_logo); ?>" width="auto" height="40px"></td>
-	    	<td><?php echo $offer_data->c_name; ?></td>
-        <td><?php echo $offer_data->job_post; ?></td>
-        <td><?php echo $offer_data->job_location; ?></td>
-        <td><?php echo $offer_data->job_salary; ?></td>
-        <td><?php echo $offer_data->job_description; ?></td>
-        <td><?php echo $offer_data->job_eligibility; ?></td>
-        <td><?php echo $offer_data->about_company; ?></td>
-	    	<td><?php echo date('d-m-Y',strtotime($offer_data->last_date)); ?></td>
-	    	<td>
-        <?php
+        <td class="bs-checkbox"><input data-index="<?php echo $offer_data->application_id; ?>" name="btSelectItem" type="checkbox"></td>
+        <td><?php echo $offer_data->application_id; ?></td>
+        <td><?php echo $offer_data->name; ?></td>
+        <td><?php echo $offer_data->email; ?></td>
+        <td><?php echo $offer_data->phone; ?></td>
+        <td><?php echo $offer_data->gender; ?></td>
+        <td><?php echo $offer_data->dept; ?></td>
+        <td><?php echo $offer_data->s_sem; ?></td>
+        <td><?php echo $offer_data->s_course; ?></td>
+        <td><?php echo $offer_data->u_sslc; ?></td>
+        <td><?php echo $offer_data->u_plustwo; ?></td>
 
-          echo "<button type='button' class='btn btn-danger' data-toggle='modal' data-target='#myModal$offer_data->job_id'>Delete</button>";
+	    <td>
+            
+            <a href="<?php echo base_url()?>Placement_cell/application_status?application_id=<?php echo $offer_data->application_id;?>&status=1&job_id=<?php echo $this->uri->segment(3); ?>"><input type="submit" name="complaint_btn" class="btn btn-success mt-1" value="Offered"></a>
+            <a href="<?php echo base_url()?>Placement_cell/application_status?application_id=<?php echo $offer_data->application_id;?>&status=2&job_id=<?php echo $this->uri->segment(3); ?>"><input type="submit" name="complaint_btn" class="btn btn-danger mt-1" value="Rejected"></a>
 
-        ?>
         </td>
     	</tr> 
       <form class="needs-validation mt-5" novalidate method="post" action="<?php echo base_url();?>Lab_assistant/update_complaint_data">
@@ -114,7 +119,7 @@ if(isset($_SESSION['update_success'])){
              <h4 class="modal-title">Details</h4>
 						 <button type="button" class="close" data-dismiss="modal">&times;</button>
 				    </div>
-            <div class="modal-body">
+        <div class="modal-body">
             <b>Offer Id : </b><input type="text" name="job_id" id="job_id" value="<?php echo $offer_data->job_id;?>" disabled style="background:none; border:none;"><br>
             <b>Logo : </b><img src="<?php echo base_url($offer_data->c_logo); ?>" width="auto" height="40px"><br>
             <b>Company Name : </b><input type="text" name="c_name" id="c_name" value="<?php echo $offer_data->c_name;?>" disabled style="background:none; border:none;"><br>
@@ -129,7 +134,7 @@ if(isset($_SESSION['update_success'])){
 
             <div class="modal-footer">
               <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
-              <a href="<?php echo base_url()?>Placement_cell/delete_offer/<?php echo $offer_data->job_id;?>"><input type="submit" name="complaint_btn" class="btn btn-danger" value="Delete Offer"></a>
+              <a href="<?php echo base_url()?>Placement_cell/applicants_page/<?php echo $offer_data->job_id;?>"><input type="submit" name="complaint_btn" class="btn btn-primary" value="Offered"></a>
             </div>
 				</div>
 			</div>
