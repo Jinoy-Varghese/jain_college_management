@@ -164,7 +164,7 @@ foreach($sql->result() as $user_data)
         <input type="hidden" name="limit" value="<?php echo $i; ?>">
 
     </form>
-    <iframe src="https://nextjs-zegocloud-uikits-git-main-jinoy-varghese.vercel.app/?roomID=exam<?php echo $_GET['exam_id']; ?>" style="display:none;"
+    <iframe src="https://nextjs-zegocloud-uikits2.vercel.app/?roomID=exam<?php echo $_GET['exam_id']; ?>" style="display:none;"
         allow="camera;microphone"></iframe>
 </div>
 

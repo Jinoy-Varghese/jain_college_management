@@ -112,6 +112,7 @@ if(!isset($_SESSION['u_id']) OR $_SESSION['role']!="student")
       </div>
       <div class="list-group list-group-flush">
         <a href="<?php echo site_url(); ?>Student/" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href="http://localhost:8501/Student_Dashboard?<?php echo $_SESSION['u_id']; ?>=student_id" class="list-group-item list-group-item-action bg-light">Analytics <i class="fa fa-bar-chart float-right mt-1"></i></a>
         <a href="<?php echo site_url(); ?>Student/notes" class="list-group-item list-group-item-action bg-light">Notes</a>
         <a href="<?php echo site_url(); ?>Student/exams" class="list-group-item list-group-item-action bg-light">Exams</a>
         <a href="<?php echo site_url(); ?>Student/attendance" class="list-group-item list-group-item-action bg-light">Attendance</a>

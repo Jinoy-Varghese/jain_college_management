@@ -141,7 +141,7 @@ $i=1;
     <td><?php echo $user_data->last_date ?></td>
 
 
-    <td><a href="https://nextjs-zegocloud-uikits-git-main-jinoy-varghese.vercel.app/?roomID=exam<?php echo $user_data->exam_id ?>" class="btn border-primary col-12 custom-button">Proctor</a></td>
+    <td><a href="https://nextjs-zegocloud-uikits2.vercel.app/?roomID=exam<?php echo $user_data->exam_id ?>" class="btn border-primary col-12 custom-button">Proctor</a></td>
 
   </tr>
 

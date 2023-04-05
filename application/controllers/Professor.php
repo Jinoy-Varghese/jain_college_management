@@ -261,7 +261,7 @@ class Professor extends CI_Controller
     $value=array('meet_status'=>1);
     $this->db->where('email',$_SESSION["u_id"]);
     $this->db->update('professor_data',$value);
-    $link="https://nextjs-zegocloud-uikits-git-main-jinoy-varghese.vercel.app/?roomID=".md5($_SESSION["u_id"]); 
+    $link="https://nextjs-zegocloud-uikits2.vercel.app/?roomID=".md5($_SESSION["u_id"]); 
     redirect($link,'refresh');
   }
   public function leave_meeting()
@@ -594,7 +594,7 @@ class Professor extends CI_Controller
      $this->db->where('email',$id);
      $this->db->update('professor_data',$value1);
      $this->db->insert('meeting_data',$meet_data);
-     redirect("https://nextjs-zegocloud-uikits-git-main-jinoy-varghese.vercel.app/?roomID=".md5($subject).md5($semester));
+     redirect("https://nextjs-zegocloud-uikits2.vercel.app/?roomID=".md5($subject).md5($semester));
     }
     else
     {
@@ -619,7 +619,7 @@ class Professor extends CI_Controller
      $this->db->where('email',$id);
      $this->db->update('professor_data',$value1);
      $this->db->insert('meeting_data',$meet_data);
-     redirect("https://nextjs-zegocloud-uikits-git-main-jinoy-varghese.vercel.app/?roomID=".md5($course).md5($semester));
+     redirect("https://nextjs-zegocloud-uikits2.vercel.app/?roomID=".md5($course).md5($semester));
     
   
      // redirect('Professor/live_meeting','refresh');

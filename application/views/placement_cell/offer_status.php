@@ -45,8 +45,8 @@ if(isset($_SESSION['update_success'])){
     <nav aria-label="breadcrumb mt-sm-5">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">View Applicants</a></li>
-            <li class="breadcrumb-item active" aria-current="page">View Applications</li>
+            <li class="breadcrumb-item"><a href="#">Companies</a></li>
+            <li class="breadcrumb-item active" aria-current="page">View Application Status</li>
         </ol>
     </nav>
 
@@ -74,7 +74,7 @@ if(isset($_SESSION['update_success'])){
                 <th data-field="Course" data-sortable="true" data-visible="false">Course</th>
                 <th data-field="SSLC" data-sortable="true" data-visible="false">SSLC</th>
                 <th data-field="Plus Two" data-sortable="true" data-visible="false">Plus Two</th>
-                <th data-field="edit">Action</th>
+                <th data-field="edit">Status</th>
             </tr>
 
         </thead>
@@ -85,7 +85,6 @@ if(isset($_SESSION['update_success'])){
       $this->db->join('student_data','student_data.email=offer_application.student_id');
       $this->db->join('offers',"offer_application.job_id=offers.job_id");
       $this->db->join('users','users.email=student_data.email');
-      $this->db->where('status','0');
       $this->db->where('offer_application.job_id',$this->uri->segment(3));
       $sql=$this->db->get();
 	    foreach($sql->result() as $offer_data)
@@ -103,11 +102,21 @@ if(isset($_SESSION['update_success'])){
         <td><?php echo $offer_data->s_course; ?></td>
         <td><?php echo $offer_data->u_sslc; ?></td>
         <td><?php echo $offer_data->u_plustwo; ?></td>
+        
 
 	    <td>
             
-            <a href="<?php echo base_url()?>Placement_cell/application_status?application_id=<?php echo $offer_data->application_id;?>&status=1&job_id=<?php echo $this->uri->segment(3); ?>"><input type="submit" name="complaint_btn" class="btn btn-success mt-1" value="Offered"></a>
-            <a href="<?php echo base_url()?>Placement_cell/application_status?application_id=<?php echo $offer_data->application_id;?>&status=2&job_id=<?php echo $this->uri->segment(3); ?>"><input type="submit" name="complaint_btn" class="btn btn-danger mt-1" value="Rejected"></a>
+            <?php
+            if($offer_data->status=='0'){
+                echo '<span class="text-warning h5">Pending</span>';
+            }
+            else if($offer_data->status=='1'){
+                echo '<span class="text-success h5">Accepted</span>';
+            }
+            else if($offer_data->status=='2'){
+                echo '<span class="text-danger h5">Rejected</span>';
+            }
+            ?>
 
         </td>
     	</tr> 

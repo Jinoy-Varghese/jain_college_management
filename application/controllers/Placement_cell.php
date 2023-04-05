@@ -76,6 +76,22 @@ class Placement_cell extends CI_Controller
     $this->load->view("placement_cell/dash_footer.php");
     $this->load->view("footer.php");
   }
+  public function offer_status($job_id)
+  {
+    $this->load->view("header.php");
+    $this->load->view("placement_cell/dash_head.php");
+    $this->load->view("placement_cell/offer_status.php",$job_id);
+    $this->load->view("placement_cell/dash_footer.php");
+    $this->load->view("footer.php");
+  }
+  public function view_companies()
+  {
+    $this->load->view("header.php");
+    $this->load->view("placement_cell/dash_head.php");
+    $this->load->view("placement_cell/view_companies.php");
+    $this->load->view("placement_cell/dash_footer.php");
+    $this->load->view("footer.php");
+  }
   public function delete_offer($job_id)
   {
     $this->db->where('job_id', $job_id);

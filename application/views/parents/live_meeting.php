@@ -81,7 +81,7 @@ if($this->session->flashdata('meeting_over')){
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. A aliquid beatae illum tenetur voluptates, officiis porro labore ad at dolorum amet repudiandae nesciunt fugiat voluptatum debitis velit pariatur animi accusamus!
     </div>
     <div class="row mt-3">
-      <a href="https://nextjs-zegocloud-uikits-git-main-jinoy-varghese.vercel.app/?roomID=<?php echo md5($course).md5($sem) ?>" class="btn btn-primary text-light shadow">Join Meeting</a>
+      <a href="https://nextjs-zegocloud-uikits2.vercel.app/?roomID=<?php echo md5($course).md5($sem) ?>" class="btn btn-primary text-light shadow">Join Meeting</a>
       </div>
     </div>
   <?php 

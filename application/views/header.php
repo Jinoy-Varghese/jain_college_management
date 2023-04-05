@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-    <title>MTCST</title>
+    <title>JAIN</title>
     <link href="<?php echo base_url('assets/css/loader.css'); ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url('assets/fontawesome-5.11.2/css/all.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap-4.3.1/css/bootstrap.min.css'); ?>">

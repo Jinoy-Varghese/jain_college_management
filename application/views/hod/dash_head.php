@@ -126,6 +126,7 @@ if(!isset($_SESSION['u_id']) OR $_SESSION['role']!="hod")
           </ul>
 
         <a href="<?php echo site_url(); ?>hod/view_professor" class="list-group-item list-group-item-action bg-light">Professors</a>
+        <a href="http://localhost:8501/" class="list-group-item list-group-item-action bg-light">Student Data Analysis</a>
         <a href="<?php echo base_url('/hod/change_incharge'); ?>" class="list-group-item list-group-item-action bg-light">Add Incharge</a>
         <a href="<?php echo base_url('/hod/add_course'); ?>" class="list-group-item list-group-item-action bg-light">Add Course</a>  
         <a href="<?php echo base_url('/hod/assign_teachers'); ?>" class="list-group-item list-group-item-action bg-light" data-toggle="tooltip" data-placement="bottom" title="Assign professors for each subject">Assign Subject</a>

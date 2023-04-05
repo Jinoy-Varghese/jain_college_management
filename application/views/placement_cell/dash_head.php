@@ -168,6 +168,9 @@ if(!isset($_SESSION['u_id']) OR $_SESSION['role']!="placement_cell")
         <a href="<?php echo site_url(); ?>Placement_cell/create_Offer" class="list-group-item list-group-item-action bg-light">Create Offer</a>
         <a href="<?php echo site_url(); ?>Placement_cell/view_offers" class="list-group-item list-group-item-action bg-light">View Offers</a>
         <a href="<?php echo site_url(); ?>Placement_cell/view_applications" class="list-group-item list-group-item-action bg-light">View Applications</a>
+        <a href="<?php echo site_url(); ?>Placement_cell/view_companies" class="list-group-item list-group-item-action bg-light">Offer Status</a>
+        <a href="http://localhost:8501/" class="list-group-item list-group-item-action bg-light">Placement Data Analysis</a>
+
 
 
       </div>
